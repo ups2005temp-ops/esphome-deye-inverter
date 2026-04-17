@@ -13,8 +13,8 @@
 # limitations under the License.
 
 substitutions:
-  name: deye-inverter
-  friendly_name: "Deye Inverter"
+  name: ${name}
+  friendly_name: ${friendly_name}
   device_description: "Deye Inverter SG0XLP3"
   modbus_controller_id: deye_modbus_controller
   baud_rate: "9600"
