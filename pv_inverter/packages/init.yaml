@@ -27,9 +27,9 @@ logger:
   baud_rate: 0      # ПОПРОБУВАТИ ВКЛЮЧИТИ 0!
   level: DEBUG 
 
-api:
-  encryption:
-    key: ${api_key}
+#api:
+#  encryption:
+#    key: ${api_key}
 
 ota:
   - platform: esphome
@@ -41,15 +41,19 @@ wifi:
   password: ${wifi_password}
   output_power: 8.5
   fast_connect: True
-  manual_ip:
-    static_ip: 192.168.3.60
-    gateway: 192.168.3.245
-    subnet: 255.255.255.0
+  #manual_ip:
+  #  static_ip: 192.168.3.60
+  #  gateway: 192.168.3.245
+  #  subnet: 255.255.255.0
 
   ap:
     ssid: "${friendly_name} Fallback Hotspot"
     password: ${fallback_password}
-
+mqtt:
+  broker: 195.60.174.157
+  port: 18831       
+  username: test12345
+  password: test12345
 captive_portal:
 
 web_server:
