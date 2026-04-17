@@ -29,17 +29,6 @@ logger:
 api:
   encryption:
     key: ${api_key}
-  on_client_disconnected:
-    - delay: ${safe_mode_delay}
-    - if:
-        condition:
-          not: api.connected
-        then:
-          - logger.log: "Lost connection to HomeAssistant API - Activating safe mode"
-          - script.execute: set_safe_modbus_registers
-
-  on_client_connected:
-    - logger.log: "Connection to HomeAssistant API restored"
 
 ota:
   - platform: esphome
