@@ -39,8 +39,8 @@ ota:
 wifi:
   ssid: ${wifi_ssid}
   password: ${wifi_password}
-#  output_power: 8.5
-#  fast_connect: True
+  output_power: 8.5
+  fast_connect: True
   manual_ip:
     static_ip: 192.168.3.60
     gateway: 192.168.3.245
