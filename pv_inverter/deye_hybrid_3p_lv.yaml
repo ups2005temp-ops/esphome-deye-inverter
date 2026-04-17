@@ -27,9 +27,9 @@ substitutions:
 
 packages:
   init: !include packages/init.yaml
-#  battery: !include packages/deye_hybrid_3p/battery.yaml
-#  gen: !include packages/deye_hybrid_3p/gen.yaml
-#  grid: !include packages/deye_hybrid_3p/grid.yaml
+  battery: !include packages/deye_hybrid_3p/battery.yaml
+  gen: !include packages/deye_hybrid_3p/gen.yaml
+  grid: !include packages/deye_hybrid_3p/grid.yaml
 #  load: !include packages/deye_hybrid_3p/load.yaml
 #  work_mode: !include packages/deye_hybrid_3p/work_mode.yaml
 #  device: !include packages/deye_hybrid_3p/device.yaml
