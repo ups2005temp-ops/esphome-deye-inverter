@@ -20,7 +20,7 @@ esphome:
   friendly_name: "${friendly_name}"
   comment: "${device_description} by ups"
   project:
-    name: "deye-inverter"
+    name: "deye-inverter.1"
     version: "0.12.0"
 
 logger:
