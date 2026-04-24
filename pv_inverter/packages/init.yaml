@@ -49,13 +49,13 @@ wifi:
   ap:
     ssid: "${friendly_name} Fallback Hotspot"
     password: ${fallback_password}
-mqtt:
-  broker: 195.60.174.157
-  port: 18831       
-  username: test12345
-  password: test12345
-  discovery_unique_id_generator: mac
-  discovery_object_id_generator: device_name  
+#mqtt:
+#  broker: 195.60.174.157
+#  port: 18831       
+#  username: test12345
+#  password: test12345
+#  discovery_unique_id_generator: mac
+#  discovery_object_id_generator: device_name  
 captive_portal:
 
 web_server:
