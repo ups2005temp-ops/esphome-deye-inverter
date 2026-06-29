@@ -1,1 +1,95 @@
+﻿# Copyright 2025 Lewa-Reka <lewareka.yt@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
+substitutions:
+  update_interval: 10s
+
+esphome:
+  name: "${name}"
+  friendly_name: "${friendly_name}"
+  comment: "${device_description} by ups"
+  project:
+    name: "deye-inverter.1"
+    version: "0.12.0"
+
+logger:
+#  baud_rate: 0      # ПОПРОБУВАТИ ВКЛЮЧИТИ 0!
+  level: DEBUG 
+
+api:
+  encryption:
+    key: ${api_key}
+
+ota:
+  - platform: esphome
+    id: ota_esphome
+    password: ${ota_password}
+
+
+#  manual_ip:
+#    static_ip: 192.168.3.60
+#    gateway: 192.168.3.245
+#    subnet: 255.255.255.0
+
+ethernet:
+  type: W5500
+  clk_pin: GPIO8
+  mosi_pin: GPIO10
+  miso_pin: GPIO9
+  cs_pin: GPIO5
+  interrupt_pin: GPIO3
+  reset_pin: GPIO4
+  clock_speed: 25MHz
+
+#mqtt:
+#  broker: 195.60.174.157
+#  port: 18831       
+#  username: test12345
+#  password: test12345
+#  discovery_unique_id_generator: mac
+#  discovery_object_id_generator: device_name  
+captive_portal:
+
+web_server:
+  port: 80
+
+uart:
+  id: modbus_uart
+  baud_rate: ${baud_rate}
+  stop_bits: 1
+
+modbus:
+  id: modbus_1
+  uart_id: modbus_uart
+
+modbus_controller:
+  - id: ${modbus_controller_id}
+    address: ${modbus_inverter_address}
+    modbus_id: modbus_1
+    setup_priority: -10
+    update_interval: ${update_interval}
+    command_throttle: 60ms
+    offline_skip_updates: 3
+
+debug:
+  update_interval: 60s
+
+sensor:
+  - platform: uptime
+    name: ESP Uptime
+    id: esp_uptime
+    type: seconds
+    icon: mdi:timer-check
+    update_interval: 60s
+    entity_category: diagnostic
