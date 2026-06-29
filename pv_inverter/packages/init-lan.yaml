@@ -59,7 +59,6 @@ ethernet:
 #  password: test12345
 #  discovery_unique_id_generator: mac
 #  discovery_object_id_generator: device_name  
-captive_portal:
 
 web_server:
   port: 80
