@@ -26,8 +26,8 @@ substitutions:
   default_force_off_grid: "off" # "on", "off"
 
 packages:
-# init-lan - для езернет версії 
-  init: !include packages/init.yaml
+  init-lan: - для езернет версії 
+ # init: !include packages/init.yaml
   battery: !include packages/deye_hybrid_3p/battery.yaml
   gen: !include packages/deye_hybrid_3p/gen.yaml
   grid: !include packages/deye_hybrid_3p/grid.yaml
