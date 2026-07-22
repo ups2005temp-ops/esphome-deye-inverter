@@ -27,7 +27,7 @@ substitutions:
 
 packages:
   #init-lan: - для езернет версії 
-  init: !include packages/init.yaml
+  init: !include packages/init-lan.yaml
   battery: !include packages/deye_hybrid_3p/battery.yaml
   gen: !include packages/deye_hybrid_3p/gen.yaml
   grid: !include packages/deye_hybrid_3p/grid.yaml
