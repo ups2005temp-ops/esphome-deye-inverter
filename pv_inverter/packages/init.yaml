@@ -41,10 +41,10 @@ wifi:
   password: ${wifi_password}
   output_power: 8.5
   fast_connect: True
-#  manual_ip:
-#    static_ip: 192.168.3.60
-#    gateway: 192.168.3.245
-#    subnet: 255.255.255.0
+  manual_ip:
+    static_ip: 192.168.3.60
+    gateway: 192.168.3.245
+    subnet: 255.255.255.0
 
   ap:
     ssid: "${friendly_name} Fallback Hotspot"
